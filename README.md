@@ -1,3 +1,9 @@
 # thymeleafExercise
-使用springboot、thymeleaf、AdminEx
-关于springboot thymeleaf的学习
+技术架构：
+
+springboot、thymeleaf、AdminEx
+
+---
+springboot和thymeleaf的学习
+
+

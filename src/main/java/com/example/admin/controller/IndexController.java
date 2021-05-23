@@ -1,6 +1,7 @@
 package com.example.admin.controller;
 
 import com.example.admin.bean.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 
+@Slf4j
 @Controller
 public class IndexController {
 
@@ -37,6 +39,9 @@ public class IndexController {
     //到main页面
     @GetMapping("/main.html")
     public String mainPage(HttpSession session,Model model){
+        log.info("当前方法是:{}","mainPage");
+        session.setMaxInactiveInterval(60*60);
+        /*
         Object loginUser = session.getAttribute("loginUser");
         session.setMaxInactiveInterval(60*60);
         if (loginUser!=null){
@@ -44,6 +49,7 @@ public class IndexController {
         }else {
             model.addAttribute("failmsg","当前未登录，请重新登录");
             return "/login";
-        }
+        }*/
+       return "main";
     }
 }
